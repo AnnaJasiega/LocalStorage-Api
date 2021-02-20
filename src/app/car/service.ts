@@ -6,17 +6,17 @@ export class Service {
         this.name = name;
         this.price = value;
     }
- 
+
     public get $name(): string {
-        return this.name
+        return this.name;
     }
     public get $price(): string {
-        return this.price
+        return this.price;
     }
-    public set $name(value:string) {
+    public set $name(value: string) {
         this.name = value;
      }
-    public set $price(value:string) {
+    public set $price(value: string) {
         this.price = value;
     }
- }
+}

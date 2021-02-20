@@ -5,6 +5,6 @@
         <div>Brand: <span class=''>{{car.brand}}</span></div>
         <div>Is working: <span>{{car.isWorking}}</span></div>
         <div>Services: <span *ngFor='let service of car.$services'>{{service.name}} - {{service.price}} zł, </span></div>
-        <button class="btn " routerLink="/edit-car/{{car.id}}&&" >Edit</button>
+        <button class="btn " routerLink="/edit-car/{{car.id}}&&{{car.owner}}" >Edit</button>
     </div>
 </div>

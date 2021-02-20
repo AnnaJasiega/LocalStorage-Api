@@ -11,13 +11,13 @@ export class DataPreparationService {
 
   prepareData(url){
     this.splitUrl(url);
-    return [this.carId,this.owner]
+    return [this.carId, this.owner];
   }
 
   splitUrl(url){
-    let splited = url.split('&&');
-    this.carId = splited[0];
-    this.owner = splited[1]
+    const splited = url.split('&&');
+    this.carId = splited[0].replace('%20', " ")
+    this.owner = splited[1];
   }
 
 

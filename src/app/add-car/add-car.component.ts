@@ -17,7 +17,7 @@ export class AddCarComponent {
   isWorking: boolean;
   carService: string;
   price: string;
-  services: Array<Object> = [];
+  services: Array<object> = [];
   car;
 
 

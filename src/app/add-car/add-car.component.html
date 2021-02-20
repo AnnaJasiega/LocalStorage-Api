@@ -1,0 +1,33 @@
+<form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Add new car</p>
+    <!-- Car Id -->
+    <input type="text" [(ngModel)]="carId" name="carId"  class="form-control mb-4" placeholder="Car Id">
+    <!-- Car owner -->
+    <input type="text" [(ngModel)]="owner" name="owner" class="form-control mb-4" placeholder="Owner">
+    <!-- Brand -->
+    <input type="text" [(ngModel)]="brand" name="brand" class="form-control mb-4" placeholder="Brand">
+    <!-- Services -->
+    <div *ngFor='let service of services; index as i' class="input-group">
+        <input type="text"  name="service" class="form-control" placeholder="{{service.name}}" >
+        <input  type="text"  name="price" class="form-control" placeholder="{{service.price}}" >
+        <div class="input-group-prepend">
+            <button class="input-group-text btn btn-light" id="" (click)='deleteService(i)'>Delete</button>
+        </div>
+    </div>
+    <!-- Ad services -->
+    <div class="input-group">
+        <input type="text" [(ngModel)]="carService" name="service" class="form-control" placeholder="Service" >
+        <input  type="text" [(ngModel)]="price" name="price" class="form-control" placeholder="Price">
+        <div class="input-group-prepend">
+            <button class="input-group-text btn btn-light" id="" (click)='addService()'>Add service</button>
+        </div>
+    </div>
+    <br>
+    <!-- Is working -->
+     <label>Does your car work?
+        <input type="checkbox" [(ngModel)]="isWorking" name="isWorking" class="form-control mb-4">
+    </label>
+    <br>  
+    <!-- Button -->
+    <button class="btn btn-light" color="info" block="true" type="submit" (click)='newCar()' routerLink="/car-overview/{{carId}}&&{{owner}}" >Add</button>
+</form>

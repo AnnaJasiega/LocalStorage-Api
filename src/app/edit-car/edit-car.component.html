@@ -1,0 +1,27 @@
+<form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Edit car</p>
+    <input type="text" [(ngModel)]="carId" name="carId"  class="form-control mb-4">
+    <input type="text" [(ngModel)]="owner" name="owner" class="form-control mb-4" placeholder="{{car['owner']}}">
+    <input type="text" [(ngModel)]="brand" name="brand" class="form-control mb-4" placeholder="{{car['brand']}}">
+    <div *ngFor='let service of services; index as i' class="input-group">
+        <input type="text"   name="serviceName" class="form-control" placeholder="{{service['name']}}">
+        <input  type="text"   name="price" class="form-control" placeholder="{{service['price']}}">
+        <div class="input-group-prepend">
+            <button class="input-group-text btn btn-light" id="" (click)='deleteService(i)'>Delete</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <input type="text" [(ngModel)]="carService" name="service" class="form-control" placeholder="Service" >
+        <input  type="text" [(ngModel)]="price" name="price" class="form-control" placeholder="Price">
+        <div class="input-group-prepend">
+            <button class="input-group-text btn btn-light" id="" (click)='addService()'>Add service</button>
+        </div>
+    </div>
+    <br>
+     <label>Does your car work?
+        <input type="checkbox" [(ngModel)]="isWorking" name="isWorking" class="form-control mb-4">
+    </label>
+    <br>  
+
+    <button class="btn btn-light" color="info" block="true" type="submit" (click)='setEdit()' routerLink="/car-overview/{{carId}}&&{{owner}}">Save changes</button>
+</form>

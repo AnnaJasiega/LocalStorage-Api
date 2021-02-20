@@ -1,0 +1,10 @@
+<div (click)='isClicked=!isClicked' class='main'> 
+    <div *ngFor = 'let car of carsList; let i=index' class="border border-dark rounded shadow-sm container"> 
+        <div class='id'>{{car.id}}</div>
+        <div>Owner: <span class=''>{{car.owner}}</span></div>
+        <div>Brand: <span class=''>{{car.brand}}</span></div>
+        <div>Is working: <span>{{car.isWorking}}</span></div>
+        <div>Services: <span *ngFor='let service of car.$services'>{{service.name}} - {{service.price}} zł, </span></div>
+        <button class="btn " routerLink="/edit-car/{{car.id}}&&" >Edit</button>
+    </div>
+</div>

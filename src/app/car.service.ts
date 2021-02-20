@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CarsList } from '../app/car-list/cars-list';
 import { DataPreparationService } from './data-preparation.service';
 
 @Injectable({
